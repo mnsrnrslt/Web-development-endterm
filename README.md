@@ -1,42 +1,86 @@
-# MODANOVA — E-Commerce Web Application (Midterm Project)
+# MODANOVA — E-Commerce Web Application (Endterm Project)
 
 Group: SE-2527
 
 Authors: Mansur Nursultanov, Daniyar Baikanov, Temkeshev Aldiyar
 
-Live Demo: https://glore81.github.io/Web-development-midterm/
+---
 
 ## Project Overview
-MODANOVA is a multi-page responsive website for a contemporary online store offering high-quality basic and trend-focused everyday apparel. Developed as a university midterm submission, the project demonstrates proficiency in semantic HTML5, modern CSS techniques (Flexbox, CSS Grid, Positioning, custom Media Queries), and responsive layouts built with the Bootstrap 5 framework.
+MODANOVA is a responsive multi-page web application for an apparel store. In this endterm milestone, we upgraded the existing midterm website by adding interactive JavaScript and jQuery features, dynamic rendering, client-side validation, and UI enhancements.
 
-## Structure & Pages (5 Pages)
-The web application includes five fully styled pages connected by a consistent navigation bar and shared design system
+---
 
-- **Home (`index.html`)** — Entry page featuring a hero promotional banner, quick search bar, and highlighted new arrivals.
+## Pages (5 Pages)
+1. **Home (`index.html`)** — Promo banners, featured items, and search bar.
+2. **Catalogue (`catalogue.html`)** — Products rendered dynamically via JavaScript with live search and category buttons.
+3. **Product Page (`productpg.html`)** — Product details, image gallery, size picker, wishlist, and cart counter.
+4. **About Us (`about.html`)** — Brand history and store mission.
+5. **Contact (`contact.html`)** — Inquiry form with validation, store map, and working hours timetable.
 
-- **Catalogue (`catalogue.html`)** — Product catalog equipped with category filter controls, instant search input, and an adaptive product display grid.
+---
 
-- **Product Page (`productpg.html`)** — Single item page with image gallery views, size and color selectors, delivery policies, and cart action buttons.
+## Implemented Features (Endterm)
 
-- **About Us (`about.html`)** — Brand presentation detailing corporate mission, wardrobe concepts, and visual store showcase layouts.
+1. **Dynamic Catalogue (`js/catalogue.js`)**
+   - Products are stored in an array of objects and rendered using JS.
+   - Category filtering (All, Tops, Bottoms, Outerwear).
+   - Real-time search by typing in the input.
+   - Shows an empty-state message if no matching products are found.
 
-- **Contact (`contact.html`)** — Feedback page with a validated inquiry form, CSS-positioned store location map, direct contact details, and support service timetable.
+2. **Form Validation (`js/validation.js`)**
+   - Checks Name length (> 2 characters).
+   - Validates Email format using regular expressions (Regex).
+   - Checks Message length (at least 10 characters).
+   - Displays clear error alerts and a success message upon sending.
 
-## Features Implemented
-- **HTML5 Semantics:** Proper heading hierarchy, semantic landmarks (`<main>`, `<nav>`, `<article>`, `<section>`, `<footer>`), validated forms, and a support schedule table.
-- **CSS Layouts:** Extensive use of CSS Grid (`.product-grid`, `.contact-grid`), Flexbox (navbar, cards), and Positioning (`position: absolute` for map pin and badges).
-- **Responsive Design:** Fully responsive layout using the Bootstrap 5 grid system alongside custom media queries for tablet (992px) and mobile (576px) viewports.
-- **Consistent UI/UX:** Unified color palette, shared navigation, and dedicated detail pages across all 5 views.
+3. **Cart & Wishlist Logic (`js/cart.js`)**
+   - Dynamically adds a red item counter badge to the cart icon.
+   - Temporary visual feedback on the "Add to basket" button.
+   - Interactive wishlist toggle (♡ / ♥) using array methods.
+
+4. **jQuery & UI Effects (`js/ui-effects.js`)**
+   - Accordion effect (`slideToggle`) for the support timetable.
+   - Image gallery fade transitions (`fadeOut` / `fadeIn`) when clicking thumbnails.
+   - Sibling button selection for garment sizes.
+   - Working dark mode toggle (🌙).
+
+---
+
+## Team Work Distribution
+
+- **Mansur Nursultanov:** Catalogue data array, dynamic DOM generation, category filtering, and instant search.
+- **Temkeshev Aldiyar:** Form validation logic, regular expressions, cart counter badge, and wishlist interactions.
+- **Daniyar Baikanov:** jQuery animations, image gallery switcher, table accordion, and dark mode styling.
+
+---
 
 ## Project Structure
-```
-├── *.html            # 5 web pages (Home, Catalogue, Product, About, Contact)
+```text
+├── index.html
+├── catalogue.html
+├── productpg.html
+├── about.html
+├── contact.html
 ├── css/
-│   ├── style.css     # Global styles (Navbar, Footer, base rules)
-│   └── *.css         # Page-specific stylesheets
+│   ├── style.css
+│   ├── main.css
+│   ├── catalogue.css
+│   ├── productpg.css
+│   ├── about.css
+│   └── contact.css
 ├── js/
-│   ├── catalogue.js  # Catalogue: product list, category filter, live search
-│   └── validation.js # Contact form validation
-├── photo/            # Media assets (product images, branding icons, map)
-└── README.md         # Project documentation
+│   ├── catalogue.js
+│   ├── cart.js
+│   ├── validation.js
+│   └── ui-effects.js
+├── photo/
+└── README.md
 ```
+
+---
+
+## How to Run
+1. Download or clone this repository.
+2. Open `index.html` in any web browser.
+3. Navigate between pages using the top navbar.
